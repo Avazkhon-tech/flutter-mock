@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ui_creation/pages/login/login_page.dart';
 import 'package:ui_creation/pages/news/news_page.dart';
+import 'package:ui_creation/pages/register/register_page.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,71 +26,66 @@ class RegisterPage extends StatelessWidget {
                     Container(
                       alignment: Alignment.center,
                       child: const Padding(
-                        padding: EdgeInsets.only(top: 20),
+                        padding: EdgeInsets.only(top: 30),
                         child: Text(
                           "MU University",
                           style: TextStyle(
-                            color: Color(0xFFDC3838),
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                          ),
+                              color: Color(0xFFDC3838), fontSize: 25, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
                     const Text(
-                      "Get Started",
+                      "Welcome back",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
                         fontWeight: FontWeight.bold,
+                        fontSize: 25,
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Text(
-                        "Please enter username to continue",
-                        style: TextStyle(color: Colors.white70),
-                      ),
+                    const Text(
+                      "Please enter username to continue",
+                      style: TextStyle(color: Colors.white),
                     ),
                     const SizedBox(height: 20),
                     const TextField(
-                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person_2_outlined, color: Colors.white),
-                        labelText: 'Create email',
-                        labelStyle: TextStyle(color: Colors.white70),
-                        filled: true,
-                        fillColor: Colors.white10,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey, width: 1),
+                        ),
+                        prefixIcon: Icon(Icons.email),
+                        hintStyle: TextStyle(color: Colors.grey),
+                        labelStyle: TextStyle(color: Colors.grey),
+                        labelText: 'Enter your email',
+                        hintText: "avazxon@gmail.com",
                         border: OutlineInputBorder(),
                       ),
                     ),
                     const SizedBox(height: 20),
                     const TextField(
-                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person_4_rounded, color: Colors.white),
-                        labelText: 'Enter your name',
-                        labelStyle: TextStyle(color: Colors.white70),
-                        filled: true,
-                        fillColor: Colors.white10,
+                        prefixIcon: Icon(Icons.lock),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey, width: 1),
+                        ),
+                        hintStyle: TextStyle(color: Colors.grey),
+                        labelStyle: TextStyle(color: Colors.grey),
+                        labelText: 'Enter your password',
+                        hintText: "Avazxon",
+                        suffixIcon: Icon(Icons.remove_red_eye),
                         border: OutlineInputBorder(),
                       ),
                     ),
                     const SizedBox(height: 20),
-                    const TextField(
-                      obscureText: true,
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock, color: Colors.white),
-                        labelText: 'Create password',
-                        labelStyle: TextStyle(color: Colors.white70),
-                        filled: true,
-                        fillColor: Colors.white10,
-                        border: OutlineInputBorder(),
-                        suffixIcon: Icon(Icons.visibility, color: Colors.white70),
-                      ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot password?',
+                          style: TextStyle(color: Colors.red),
+                        )
+                      ],
                     ),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -107,7 +102,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
+                      Navigator.pushReplacement(context, MaterialPageRoute(
                         builder: (context) => const NewsPage(),
                       ));
                     },
@@ -123,18 +118,18 @@ class RegisterPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Have an account?",
+                    "Dont have an account?",
                     style: TextStyle(color: Colors.white),
                   ),
                   const SizedBox(width: 20),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(context, MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
+                        builder: (context) => const RegisterPage(),
                       ));
                     },
                     child: const Text(
-                      "Sign In",
+                      "Sign Up",
                       style: TextStyle(color: Color(0xFFDC3838)),
                     ),
                   ),
