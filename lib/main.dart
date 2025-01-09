@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_creation/pages/register/news_page.dart';
+import 'package:ui_creation/pages/register/profile_screen.dart';
 
 import 'pages/register/register_page.dart';
 
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterPage(),
+      home: ProfileScreen(),
     );
   }
 }

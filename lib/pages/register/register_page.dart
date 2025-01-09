@@ -21,62 +21,98 @@ class RegisterPage extends StatelessWidget {
               Container(
                 alignment: Alignment.center,
                 child: const Padding(
-                  padding: EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: 20),
                   child: Text(
                     "MU University",
                     style: TextStyle(
-                        color: Color(0xFFDC3838), fontSize: 25, fontWeight: FontWeight.bold),
+                      color: Color(0xFFDC3838),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
               const Text(
-                "data",
+                "Get Started",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  "Please enter username to continue",
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+              const SizedBox(height: 20),
+              const TextField(
                 style: TextStyle(color: Colors.white),
-              ),
-              const SizedBox(height: 20),
-              const TextField(
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: Icon(Icons.person_2_outlined, color: Colors.white),
                   labelText: 'Create email',
-                  hintText: "avazxon@gmail.com",
+                  labelStyle: TextStyle(color: Colors.white70),
+                  filled: true,
+                  fillColor: Colors.white10,
                   border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
               const TextField(
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: Icon(Icons.person_4_rounded, color: Colors.white),
                   labelText: 'Enter your name',
-                  hintText: "Nazirov",
+                  labelStyle: TextStyle(color: Colors.white70),
+                  filled: true,
+                  fillColor: Colors.white10,
                   border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
               const TextField(
+                obscureText: true,
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.lock, color: Colors.white),
                   labelText: 'Create password',
-                  hintText: "Avazxon",
+                  labelStyle: TextStyle(color: Colors.white70),
+                  filled: true,
+                  fillColor: Colors.white10,
                   border: OutlineInputBorder(),
+                  suffixIcon: Icon(Icons.visibility, color: Colors.white70),
                 ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                  child: const Text("Sign up")),
-              const SizedBox(height: 20),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Already have an account?"),
-                  SizedBox(width: 20),
-                  Text(
-                    "Log in",
-                    style: TextStyle(color: Colors.blue),
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFDC3838),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
-                ],
-              )
+                ),
+                child: const Text(
+                  "Continue",
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Center(
+                child: Text(
+                  "Have an account?",
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+              const Center(
+                child: Text(
+                  "Sign in",
+                  style: TextStyle(color: Color(0xFFDC3838), fontSize: 16),
+                ),
+              ),
             ],
           ),
         ),
